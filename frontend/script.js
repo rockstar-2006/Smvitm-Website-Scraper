@@ -39,6 +39,19 @@ const voiceOrb = document.getElementById('voice-orb');
 const voiceStatus = document.getElementById('voice-status');
 const voiceSubtext = document.getElementById('voice-subtext');
 
+// If this project is embedded as an iframe, respond to parent events.
+window.addEventListener('message', (event) => {
+    if (event.data === 'chat-maximized') {
+        const appWrap = document.getElementById('app-wrapper');
+        const input = document.getElementById('user-input');
+        if (appWrap) appWrap.classList.remove('minimized');
+        if (input) input.focus();
+    } else if (event.data === 'chat-minimized') {
+        const appWrap = document.getElementById('app-wrapper');
+        if (appWrap) appWrap.classList.add('minimized');
+    }
+});
+
 // --- Helper: Remove welcome section & chips on first message ---
 function hideWelcome() {
     if (chatStarted) return;
@@ -217,6 +230,11 @@ document.addEventListener('click', (e) => {
                 minBtn.style.transform = 'scale(1)';
                 minBtn.style.opacity = '1';
                 appWrap.classList.add('minimized');
+
+                // If embedded in an iframe, notify parent to hide the iframe container
+                if (window.parent && window.parent !== window) {
+                    window.parent.postMessage('chat-minimized', '*');
+                }
             }, 150);
         }
         return;
