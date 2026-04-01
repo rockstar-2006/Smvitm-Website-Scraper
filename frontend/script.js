@@ -211,9 +211,17 @@ document.addEventListener('click', (e) => {
     if (toggleBtn) {
         const appWrap = document.getElementById('app-wrapper');
         const input = document.getElementById('user-input');
-        if (appWrap) appWrap.classList.toggle('minimized');
-        if (appWrap && !appWrap.classList.contains('minimized') && input) {
-            input.focus();
+        if (appWrap) {
+            const isMinimized = appWrap.classList.contains('minimized');
+            appWrap.classList.toggle('minimized');
+            
+            // Force browser reflow to guarantee CSS transition fires
+            void appWrap.offsetHeight;
+            
+            // Focus input when opening
+            if (isMinimized && input) {
+                setTimeout(() => input.focus(), 30);
+            }
         }
         return;
     }

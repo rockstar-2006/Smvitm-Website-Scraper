@@ -157,21 +157,20 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
     pointer-events: auto;
-    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                visibility 0s linear 0s;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    visibility: visible;
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0s linear;
     transform-origin: bottom right;
-    will-change: transform, opacity;
+    will-change: transform, opacity, visibility;
 }
 
 .app-wrapper.minimized .glass-container {
     opacity: 0;
-    transform: scale(0.92) translateY(12px);
+    transform: scale(0.9) translateY(15px);
     pointer-events: none;
     visibility: hidden;
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1),
-               transform 0.3s cubic-bezier(0.4, 0, 1, 1),
-               visibility 0s linear 0.3s;
+    transition: opacity 0.25s ease-in, transform 0.25s ease-in, visibility 0s linear 0.25s;
 }
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
