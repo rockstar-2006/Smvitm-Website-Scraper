@@ -1424,8 +1424,9 @@ header::before {
     }
     
     .glass-container {
-        width: min(30vw, 550px);
-        height: min(85vh, 750px);
+        width: clamp(520px, 40vw, 600px);
+        height: clamp(700px, 85vh, 800px);
+        border-radius: 16px;
     }
     
     .app-wrapper {
@@ -1437,8 +1438,52 @@ header::before {
         padding: 18px 22px;
     }
     
+    #chat-container {
+        padding: 20px;
+        gap: 16px;
+    }
+    
+    .welcome-title {
+        font-size: 1.4rem;
+    }
+    
+    .welcome-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .suggestion-chips {
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .chip {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        flex: 0 1 auto;
+        white-space: normal;
+        max-width: 100%;
+    }
+    
     .message {
-        max-width: 80%;
+        max-width: 85%;
+        font-size: 0.95rem;
+        padding: 12px 16px;
+    }
+    
+    .bot-message h1, .bot-message h2, .bot-message h3 {
+        font-size: 1.15rem;
+    }
+    
+    .input-area {
+        padding: 16px 18px;
+        min-height: 64px;
+    }
+    
+    #user-input {
+        font-size: 1rem;
+        padding: 12px 16px;
     }
 }
 
@@ -1449,13 +1494,59 @@ header::before {
     }
     
     .glass-container {
-        width: min(26vw, 600px);
-        height: min(88vh, 800px);
+        width: clamp(600px, 35vw, 700px);
+        height: clamp(750px, 88vh, 900px);
+        border-radius: 18px;
     }
     
     .app-wrapper {
         bottom: 40px;
         right: 40px;
+    }
+    
+    #chat-container {
+        padding: 24px;
+        gap: 18px;
+    }
+    
+    .welcome-title {
+        font-size: 1.6rem;
+    }
+    
+    .welcome-desc {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+    
+    .suggestion-chips {
+        gap: 12px;
+    }
+    
+    .chip {
+        padding: 14px 22px;
+        font-size: 1rem;
+        flex: 0 1 auto;
+    }
+    
+    .message {
+        max-width: 80%;
+        font-size: 1rem;
+        padding: 14px 18px;
+    }
+    
+    .bot-message h1, .bot-message h2, .bot-message h3 {
+        font-size: 1.3rem;
+        margin: 12px 0 8px 0;
+    }
+    
+    .input-area {
+        padding: 18px 20px;
+        min-height: 70px;
+    }
+    
+    #user-input {
+        font-size: 1.05rem;
+        padding: 14px 18px;
     }
 }
 
@@ -1466,8 +1557,9 @@ header::before {
     }
     
     .glass-container {
-        width: min(24vw, 650px);
-        height: min(87vh, 850px);
+        width: clamp(650px, 30vw, 750px);
+        height: clamp(800px, 87vh, 950px);
+        border-radius: 20px;
     }
     
     .app-wrapper {
@@ -1476,8 +1568,53 @@ header::before {
         gap: 24px;
     }
     
+    #chat-container {
+        padding: 28px;
+        gap: 20px;
+    }
+    
+    .welcome-title {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-desc {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 100%;
+    }
+    
+    .suggestion-chips {
+        gap: 14px;
+    }
+    
+    .chip {
+        padding: 16px 26px;
+        font-size: 1.05rem;
+    }
+    
+    .message {
+        max-width: 80%;
+        font-size: 1.05rem;
+        padding: 16px 20px;
+    }
+    
+    .bot-message h1, .bot-message h2, .bot-message h3 {
+        font-size: 1.4rem;
+        margin: 14px 0 10px 0;
+    }
+    
+    .input-area {
+        padding: 20px 22px;
+        min-height: 76px;
+    }
+    
+    #user-input {
+        font-size: 1.1rem;
+        padding: 16px 20px;
+    }
+    
     .chat-toggle-btn {
-        padding: 0 36px;
+        padding: 0 40px;
         font-size: 1.2rem;
     }
 }
