@@ -46,7 +46,7 @@ html {
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg-cream);
+    background: #ffffff; /* ensure page behind widget is white, not creamy off-white */
     min-height: 100dvh;
     min-height: 100vh;
     display: flex;
@@ -55,6 +55,14 @@ body {
     overflow: hidden;
     color: var(--text-dark);
     padding: clamp(8px, 2vw, 24px);
+}
+
+.app-wrapper {
+    pointer-events: none;
+}
+
+.app-wrapper:not(.minimized) {
+    pointer-events: auto;
 }
 
 @media (max-width: 480px) {
@@ -149,28 +157,28 @@ body {
     height: min(80dvh, 580px);
     max-height: calc(100dvh - 120px);
     max-width: calc(100vw - 64px);
-    background: var(--bg-white);
+    background: var(--bg-white) !important;
     border-radius: clamp(12px, 3vw, 20px);
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    pointer-events: auto;
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    visibility: visible;
-    transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0s linear;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    transform: scale(1) translateY(0) !important;
+    visibility: visible !important;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
     transform-origin: bottom right;
-    will-change: transform, opacity, visibility;
+    will-change: opacity, transform;
 }
 
 .app-wrapper.minimized .glass-container {
-    opacity: 0;
-    transform: scale(0.9) translateY(15px);
-    pointer-events: none;
-    visibility: hidden;
-    transition: opacity 0.25s ease-in, transform 0.25s ease-in, visibility 0s linear 0.25s;
+    opacity: 0 !important;
+    transform: scale(0.88) translateY(20px) !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
 }
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
