@@ -707,19 +707,9 @@ header::before {
     max-height: clamp(36px, 8vw, 44px);
     resize: none;
     line-height: 1.4;
-}
-
-#user-input::placeholder {
-    color: #9a9a9a;
-}
-
-.input-action-btn {
-    width: clamp(36px, 9vw, 44px);
-    height: clamp(36px, 9vw, 44px);
-    border-radius: 50%;
-    border: none;
-    background: transparent;
-    color: var(--text-medium);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1424,7 +1414,7 @@ header::before {
     }
     
     .glass-container {
-        width: clamp(520px, 40vw, 600px);
+        width: clamp(600px, 50vw, 700px);
         height: clamp(700px, 85vh, 800px);
         border-radius: 16px;
     }
