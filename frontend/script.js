@@ -219,18 +219,16 @@ document.addEventListener('click', (e) => {
             const isCurrentlyMinimized = appWrap.classList.contains('minimized');
 
             if (isCurrentlyMinimized) {
-                // OPEN: remove minimized class and set visible
+                // OPEN: remove minimized class (keep wrapper visible for toggle button)
                 appWrap.classList.remove('minimized');
-                appWrap.style.display = 'flex';
                 void appWrap.offsetHeight;
 
                 if (input) {
                     setTimeout(() => input.focus(), 50);
                 }
             } else {
-                // CLOSE: keep hidden and add minimized class
+                // CLOSE: add minimized class (chat panel hidden but toggle remains)
                 appWrap.classList.add('minimized');
-                appWrap.style.display = 'none';
                 void appWrap.offsetHeight;
 
                 if (window.parent && window.parent !== window) {
