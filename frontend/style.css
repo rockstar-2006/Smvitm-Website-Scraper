@@ -147,7 +147,8 @@ body {
     z-index: 1;
     width: min(90vw, 420px);
     height: min(90dvh, 650px);
-    max-height: 100dvh;
+    max-height: calc(100dvh - 72px);
+    max-width: calc(100vw - 64px);
     background: var(--bg-white);
     border-radius: clamp(12px, 3vw, 20px);
     display: flex;
@@ -188,16 +189,18 @@ body {
 /* DESKTOP (769px - 1400px) */
 @media (min-width: 769px) {
     .glass-container {
-        width: min(28vw, 500px);
-        height: min(80dvh, 700px);
+        width: min(28vw, 520px);
+        height: min(78dvh, 700px);
+        max-height: calc(100dvh - 80px);
     }
 }
 
 /* LARGE DESKTOP / TV (1401px+) */
 @media (min-width: 1401px) {
     .glass-container {
-        width: min(25vw, 600px);
-        height: min(85dvh, 800px);
+        width: min(25vw, 620px);
+        height: min(80dvh, 760px);
+        max-height: calc(100dvh - 80px);
     }
 }
 
@@ -1414,8 +1417,9 @@ header::before {
     }
     
     .glass-container {
-        width: clamp(600px, 50vw, 700px);
-        height: clamp(700px, 85vh, 800px);
+        width: clamp(560px, 45vw, 680px);
+        height: min(75dvh, 720px);
+        max-height: calc(100dvh - 80px);
         border-radius: 16px;
     }
     
