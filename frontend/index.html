@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMVITM Assistant</title>
+    <link rel="stylesheet" href="style.css?v=12">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="marked.min.js"></script>
+</head>
+<body>
+    <!-- Voice Overlay (Hidden by default) -->
+    <div id="voice-overlay" class="hidden">
+        <button id="close-voice-btn" title="Exit Voice Mode">✖</button>
+        <div class="voice-content">
+            <h2 id="voice-status">Voice Mode</h2>
+            <div class="orb-container">
+                <div id="voice-orb" class="idle"></div>
+            </div>
+            <p id="voice-subtext">Click the orb to start speaking.</p>
+        </div>
+    </div>
+
+    <!-- Chat Launcher Button -->
+    <div id="chat-launcher" class="launcher-btn">
+        <div class="launcher-content">
+            <span class="launcher-text">Ask SMVITM</span>
+            <div class="launcher-icon">
+                <img src="https://sode-edu.in/smvitm/wp-content/uploads/2021/05/logo_smvitm.png" alt="Logo">
+            </div>
+        </div>
+        <div class="close-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
+    </div>
+
+    <!-- Chat Widget Container -->
+    <div id="chat-widget" class="chat-widget hidden">
+        <div class="glass-container">
+            <header>
+                <div class="logo-section">
+                    <img src="https://sode-edu.in/smvitm/wp-content/uploads/2021/05/logo_smvitm.png" alt="SMVITM Logo" class="logo">
+                    <div class="title-group">
+                        <h1>SMVITM Assistant</h1>
+                        <p class="status"><span class="pulse"></span> Online • AI-Powered</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="clear-chat" title="Clear Chat" class="header-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                    </button>
+                    <button id="close-chat" title="Close Chat" class="header-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </header>
+
+            <div id="chat-container">
+                <div class="welcome-section fade-in">
+                    <div class="welcome-icon">🎓</div>
+                    <h2>Welcome to SMVITM</h2>
+                    <p>I am your AI assistant, providing information about SMVITM, including admissions, academic programs, placements, and campus life.</p>
+                    
+                    <div class="quick-actions">
+                        <button class="action-chip" data-query="What courses are offered?">📚 Courses Offered</button>
+                        <button class="action-chip" data-query="Tell me about admissions">🎯 Admissions</button>
+                        <button class="action-chip" data-query="How are the placements?">💼 Placements</button>
+                        <button class="action-chip" data-query="What PG programs are available?">🎓 PG Programs</button>
+                        <button class="action-chip" data-query="Tell me about the MBA program">📊 MBA</button>
+                        <button class="action-chip" data-query="What are the hostel facilities?">🏠 Hostel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="user-input" placeholder="Ask about admissions, branches, placeme..." autocomplete="off">
+                    <button id="mic-btn" title="Click to talk" class="idle">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5-3c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+                    </button>
+                </div>
+                <button id="send-btn" title="Send message">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+            <div class="footer-credit">
+                Powered by AI • <a href="https://sode-edu.in/smvitm/" target="_blank">sode-edu.in/smvitm</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=11"></script>
+</body>
+</html>
+
